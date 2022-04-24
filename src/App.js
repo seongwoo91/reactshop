@@ -6,6 +6,10 @@ import { Navbar, Container, Nav, NavDropdown, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import Data from './data';
+import { Link, Route, Switch } from 'react-router-dom'
+import Detail from './Detail';
+
+
 
 
 function App() {
@@ -22,8 +26,8 @@ function App() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link><Link to="/">Home</Link></Nav.Link>
+            <Nav.Link><Link to="/detail">Detail</Link></Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -50,7 +54,13 @@ function App() {
         </Card.Body>
       </Card>
 
+      <Route exact path="/">
+          
+      </Route>
 
+      <Route exact path="/detail">
+        <Detail />
+      </Route>  
 
 
       <div className='container'>
@@ -68,6 +78,10 @@ function App() {
     </div>
   );
 }
+
+
+
+
 
 function Card2(props){
   return (
